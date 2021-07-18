@@ -10,4 +10,10 @@ describe('Modal.vue', () => {
     })
     expect(wrapper.find('span').exists()).toBeTruthy()
   })
+
+  test('emits on-close when button is clicked', () => {
+    const wrapper = shallowMount(Modal)
+    wrapper.find('button').trigger('click')
+    expect(wrapper.emitted('close-modal').length).toBe(1)
+  })
 })

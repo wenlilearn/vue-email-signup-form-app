@@ -2,7 +2,7 @@
   <div>
     <Modal
       v-if="displayModal"
-      :onClose="closeModal"
+      @close-modal="closeModal"
     >
       <Form v-on:form-submitted="closeModal" />
     </Modal>
